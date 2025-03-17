@@ -1,0 +1,92 @@
+
+body {
+    /* direction: rtl;
+    text-align: right; */
+    font-family: 'Tajawal', sans-serif; 
+  }
+:root{
+    --main-collor:#9747FF;
+}
+
+/* sideBar */
+
+
+
+
+/* dashBorad */
+
+
+.slick-dots li.slick-active button:before {
+  color: #9747FF  !important;
+}
+
+
+/* activity */
+
+/* media querys */
+@media(max-width:767px){
+  .dashBoardContent{
+flex-direction: column-reverse;
+  }
+    .events{
+      top: 50px !important;
+    }
+}
+
+@media(max-width:481px){
+  .adCard{
+    justify-content: center;
+  }
+}
+@media(max-width:1400px){
+  .eventCart{
+    width: 50rem !important
+    
+}
+.eventcontent{
+  justify-content: center ;
+}
+}
+
+  
+
+/* تنسيق الزر */
+   .toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-label::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.toggle-input:checked + .toggle-label {
+    background-color: #4caf50; /
+}
+
+.toggle-input:checked + .toggle-label::before {
+    transform: translateX(30px);
+}
+
+.form-check-input:checked{
+  background-color: #9747FF !important;
+  border-color: #9747FF !important;
+}
