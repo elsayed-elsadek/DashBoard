@@ -8,7 +8,7 @@ import CategoryCard from './CategoryCard';
 
 const EventCategories = ({ state, onClick }) => (
     <div className="mb-4">
-        <p className="text-end">التصنيفات:</p>
+        <p className="text-end">:التصنيفات</p>
         <div className="d-grid flex-wrap gap-3">
             {[
                 { icon: faProjectDiagram, label: 'التكنولوجيا' },
