@@ -1,14 +1,12 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import NotFound from './pages/NotFound';
 import DashBoard from './pages/DashBoard';
 import Home from './pages/Home';
 import Ads from './pages/Ads';
 import Events from './pages/Events';
 import Settings from './pages/Settings';
-
 import { Route, Router, Routes } from 'react-router-dom';
-// import AdEvent from './component/AddEvent';
 
 function App() {
 
@@ -22,10 +20,7 @@ function App() {
           <Route path='/ads' element={<Ads />} />
           <Route path='/events' element={<Events />} />
           <Route path='/settings' element={<Settings />} />
-          {/* <Route path='/r' element={<AdEvent />} /> */}
-
-
-
+          <Route path='*' element={<NotFound />} />
 
         </Route>
       </Routes>

@@ -20,7 +20,13 @@ const Events = () => {
     }, [events]);
 
     const handleDelete = (id) => {
-        setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
+        // عرض رسالة تأكيد
+        const isConfirmed = window.confirm("هل أنت متأكد أنك تريد حذف هذا الحدث؟");
+
+        // إذا وافق المستخدم على الحذف
+        if (isConfirmed) {
+            setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
+        }
     };
 
     const handleEdit = (updatedEvent) => {

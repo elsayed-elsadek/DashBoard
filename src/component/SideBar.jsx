@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCalendar, faPaperclip, faGear } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const SideBar = () => {
     const menuItems = [
         { name: "الرئيسية", path: "/", icon: faHome },
-        { name: "الفعاليات", path: "/Events", icon: faCalendar },
+        { name: "الفعاليات", path: "/events", icon: faCalendar },
         { name: "الإعلانات", path: "/ads", icon: faPaperclip },
         { name: "الإعدادات", path: "/settings", icon: faGear }
     ];
 
-    const [activeTab, setActiveTab] = useState(menuItems[0].name)
+    const location = useLocation();
+    const [activeTab, setActiveTab] = useState(menuItems.find(item => item.path === location.pathname)?.name || menuItems[0].name);
+
+    useEffect(() => {
+        const currentItem = menuItems.find(item => item.path === location.pathname);
+        if (currentItem) {
+            setActiveTab(currentItem.name);
+        }
+    }, [location]);
 
     return (
         <div className="d-flex flex-column gap-3">
@@ -26,9 +34,7 @@ const SideBar = () => {
                         cursor: 'pointer',
                         borderRadius: '8px'
                     }}
-                    onClick={() => setActiveTab(item.name)
-
-                    }
+                    onClick={() => setActiveTab(item.name)}
                 >
                     {item.name}
                     <FontAwesomeIcon icon={item.icon} className="my-auto mx-2" />

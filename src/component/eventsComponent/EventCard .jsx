@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock, faLocation } from "@fortawesome/free-solid-svg-icons";
 
 const EventCard = ({ event, onDelete, onEdit }) => {
-    const lastSection = document.getElementById("add-evevnt-section");
+    // const lastSection = document.getElementById("add-evevnt-section");
 
     return (
         <div className="col-md-6 col-lg-6 shadow-sm p-3 position-relative eventCart" >
@@ -32,7 +32,7 @@ const EventCard = ({ event, onDelete, onEdit }) => {
                                 className="btn border border-2 mx-2 rounded-4 text-light"
                                 style={{ backgroundColor: "#9747FF" }}
                                 onClick={() => {
-                                    onEdit(event); lastSection.scrollIntoView({ behavior: "smooth" });;
+                                    onEdit(event); window.scroll({ top: 10000, behavior: "smooth" });
                                 }}
                             >
                                 تعديل
